@@ -1,6 +1,5 @@
 import Category from "@/components/Category";
 import PhotoCard from "@/components/PhotoCard";
-import React from "react";
 
 const AllPhotoPage = async ({ searchParams }) => {
   const { category } = await searchParams;
