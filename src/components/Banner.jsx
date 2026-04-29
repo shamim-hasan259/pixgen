@@ -21,8 +21,7 @@ const Banner = () => {
                   Generate Now
                 </Button>
               </Link>
-
-              <Link href="/pricing">
+              <Link href="#">
                 <Button variant="outline" className="text-white">
                   View Pricing
                 </Button>
