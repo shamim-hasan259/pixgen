@@ -12,5 +12,5 @@ export const proxy = async (request) => {
   return NextResponse.redirect(new URL("/signin", request.url));
 };
 export const config = {
-  matcher: ["/profile", "/all-photos/:path*"],
+  matcher: ["/profile", "/all-photos/:path"],
 };

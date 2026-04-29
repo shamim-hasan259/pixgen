@@ -9,10 +9,16 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 const Signup = () => {
   const router = useRouter();
+  const handleSignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -39,7 +45,11 @@ const Signup = () => {
       <h2 className="text-center text-2xl font-bold text-purple-500">
         Create new account
       </h2>
-      <Form onSubmit={handleRegister} className="flex flex-col gap-4">
+      <Form
+        cl
+        onSubmit={handleRegister}
+        className="flex flex-col gap-4  px-20 py-10 shadow "
+      >
         <TextField isRequired name="name" type="text">
           <Label>Name</Label>
           <Input placeholder="Enter your name" />
@@ -91,11 +101,17 @@ const Signup = () => {
           <FieldError />
         </TextField>
         <div className="flex gap-2">
-          <Button type="submit">Submit</Button>
-          <Button type="reset" variant="secondary">
-            Reset
+          <Button className="w-full" type="submit">
+            Submit
           </Button>
+          <Button onClick={handleSignIn}>Sign in With Google</Button>
         </div>
+        <p>
+          Your account already exist{" "}
+          <Link className="text-purple-500" href="/signin">
+            Signin
+          </Link>
+        </p>
       </Form>
     </div>
   );

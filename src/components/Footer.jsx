@@ -23,7 +23,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <h2 className="text-xl font-semibold tracking-tight text-black dark:text-white">
-                pixgen
+                Pixgen
               </h2>
             </div>
 

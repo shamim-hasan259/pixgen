@@ -14,7 +14,7 @@ const AllPhotoPage = async ({ searchParams }) => {
     : photos;
   return (
     <div className="container mx-auto">
-      <h2 className="text-center font-bold text-4xl my-8">All Photos</h2>
+      <h2 className="text-center font-bold text-2xl my-8">All Photos</h2>
       <Category />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {filteredPhoto.map((photo) => (

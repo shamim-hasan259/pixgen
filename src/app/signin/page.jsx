@@ -9,8 +9,14 @@ import {
   Label,
   TextField,
 } from "@heroui/react";
+import Link from "next/link";
 
 const SignIn = () => {
+  const SignIn = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+    });
+  };
   const handleSignIn = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -36,7 +42,10 @@ const SignIn = () => {
         Login your account
       </h2>
       <div className="space-y-5">
-        <Form onSubmit={handleSignIn}>
+        <Form
+          className=" px-20 py-10 shadow flex flex-col gap-4"
+          onSubmit={handleSignIn}
+        >
           <TextField
             isRequired
             name="email"
@@ -79,10 +88,14 @@ const SignIn = () => {
           </TextField>
           <div className="flex gap-2">
             <Button type="submit">Submit</Button>
-            <Button type="reset" variant="secondary">
-              Reset
-            </Button>
+            <Button onClick={SignIn}>Login with Google</Button>
           </div>
+          <p>
+            No Account{" "}
+            <Link className="text-purple-500" href="/signup">
+              Signup
+            </Link>
+          </p>
         </Form>
       </div>
     </div>
