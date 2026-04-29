@@ -1,10 +1,11 @@
+import Profile from "@/components/Profile";
 export const metadata = {
   title: "Pixgen --Profile",
 };
 const ProfilePage = () => {
   return (
-    <div>
-      <h2>This is profile page</h2>
+    <div className="flex justify-center items-center h-[60vh]">
+      <Profile />
     </div>
   );
 };
