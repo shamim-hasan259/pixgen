@@ -1,3 +1,6 @@
+export const metadata = {
+  title: "Pixgen --PhotoDetails",
+};
 const PhotoDetailsPage = async ({ params }) => {
   const { id } = await params;
   const res = await fetch("https://ai-photo-teal.vercel.app/data.json");

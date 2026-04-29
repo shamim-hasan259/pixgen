@@ -1,6 +1,8 @@
 import Category from "@/components/Category";
 import PhotoCard from "@/components/PhotoCard";
-
+export const metadata = {
+  title: "Pixgen --AllPhoto",
+};
 const AllPhotoPage = async ({ searchParams }) => {
   const { category } = await searchParams;
   const res = await fetch("https://ai-photo-teal.vercel.app/data.json");
